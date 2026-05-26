@@ -155,6 +155,13 @@ strong { font-weight: 600; }
 /* ---------- Teaser & figures ---------- */
 .teaser { padding: 40px 0; border-bottom: 1px solid var(--line); }
 
+.teaser-figure img {
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
 figure {
   margin: 0 0 12px;
   text-align: center;
@@ -191,6 +198,32 @@ figcaption {
 }
 .download-card h3 { margin-bottom: 4px; }
 .download-card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+/* ---------- More-in-paper list ---------- */
+.more-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.more-list li {
+  padding: 14px 0 14px 22px;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  line-height: 1.6;
+}
+.more-list li:last-child { border-bottom: none; }
+.more-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 24px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.7;
+}
+.more-list strong { color: var(--fg); }
 
 /* ---------- BibTeX ---------- */
 pre {
