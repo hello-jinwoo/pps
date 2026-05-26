@@ -156,7 +156,7 @@ strong { font-weight: 600; }
 .teaser { padding: 40px 0; border-bottom: 1px solid var(--line); }
 
 .teaser-figure img {
-  max-width: 560px;
+  max-width: 392px;
   width: 100%;
   margin: 0 auto;
   display: block;
