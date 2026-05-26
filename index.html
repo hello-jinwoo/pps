@@ -46,10 +46,10 @@
 
 <section class="teaser">
   <div class="container">
-    <figure>
-      <img src="figures/image_samples-1.png" alt="Sample image pairs from PPSD across five source categories." />
+    <figure class="teaser-figure">
+      <img src="figures/web_app_teaser-1.png" alt="Pairwise comparison interface: two photos of the same scene with different styles, asking the user to pick the preferred one." />
       <figcaption>
-        <strong>The PPSD dataset.</strong> Pairwise image samples spanning five source categories — professional expert edits, device processing variations, generative model outputs, synthetic adjustments, and content-based variations.
+        <strong>PPS learning from pairwise preferences.</strong> Users repeatedly choose between two differently-styled renderings of the same scene. Each choice reveals a direction in color and tonal preference, and the model learns to generalize that direction to new images.
       </figcaption>
     </figure>
   </div>
@@ -76,9 +76,16 @@
     </p>
 
     <figure>
+      <img src="figures/image_samples-1.png" alt="Sample image pairs from PPSD across five source categories." />
+      <figcaption>
+        <strong>Five source categories.</strong> Professional expert edits, device processing variations, generative model outputs, synthetic adjustments, and content-based variations — together spanning a wide range of color and tonal style signals.
+      </figcaption>
+    </figure>
+
+    <figure>
       <img src="figures/collection_statistics.png" alt="Dataset statistics: consistency, age, region, device, eyewear distributions." />
       <figcaption>
-        PPSD participant statistics — consistency scores, age, geographic regions, display devices, and eyewear usage.
+        <strong>Participant statistics.</strong> Consistency scores, age, geographic regions, display devices, and eyewear usage across 767 retained users.
       </figcaption>
     </figure>
 
@@ -119,6 +126,38 @@
         Given either non-preferred or preferred images as input, models adjust toward the user's preferred aesthetic while preserving the preferred ones. The bottom row shows a cross-model comparison on identical scenes.
       </figcaption>
     </figure>
+  </div>
+</section>
+
+<section id="more">
+  <div class="container narrow">
+    <h2>More in the Paper</h2>
+    <p class="lead">
+      This page is a quick tour. The paper goes deeper on dataset construction, modeling, evaluation, and what we learned along the way.
+    </p>
+    <ul class="more-list">
+      <li>
+        <strong>Dataset construction.</strong> How each of the five source categories was built — including 188 Adobe-MIT 5K scenes, 308 multi-device pairs, FLUX-kontext driven generative pairs, and content-specific collections.
+      </li>
+      <li>
+        <strong>Web app &amp; quality control.</strong> Registration, pre-survey, tutorial, the 90-question comparison protocol, and the consistency-check filter that retained 767 of 858 participants.
+      </li>
+      <li>
+        <strong>Baseline architectures.</strong> Full training objective, encoder/decoder choices (EDSR + HIIF), implicit image function formulation, and how each baseline conditions on preference data.
+      </li>
+      <li>
+        <strong>Comparative Quality Score (CQS).</strong> A new metric for the implicit-preference setting that combines a Base Fidelity Score with a Comparative Margin Ratio — designed because conventional metrics don't capture relative preference alignment.
+      </li>
+      <li>
+        <strong>Ablation studies.</strong> Effects of training-user count (50 → 471) and reference-image count (4 → 32) on personalization quality.
+      </li>
+      <li>
+        <strong>Discussion.</strong> Collecting preferences over time, the tension between automation and user agency, and methodological directions (DPO-style preference optimization for stylization).
+      </li>
+    </ul>
+    <p class="muted" style="margin-top: 18px;">
+      <a href="_CVPR_26__PPS.pdf" target="_blank" rel="noopener">Read the full paper →</a>
+    </p>
   </div>
 </section>
 
