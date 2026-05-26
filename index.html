@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Learning Personalized Photographic Style from Pairwise User Preferences</title>
+<meta name="description" content="PPS: Learning Personalized Photographic Style from Pairwise User Preferences. Project page for the PPSD dataset and baseline methods." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <h1 class="title">Learning Personalized Photographic Style<br/>from Pairwise User Preferences</h1>
+
+    <div class="authors">
+      <span class="author"><a href="mailto:jinwoo-kim@yonsei.ac.kr">Jinwoo Kim</a><sup>1</sup></span>
+      <span class="author"><a href="mailto:gudong0918@gmail.com">Jihye Yoo</a><sup>2,*</sup></span>
+      <span class="author"><a href="mailto:seonjookim@yonsei.ac.kr">Seon Joo Kim</a><sup>1</sup></span>
+    </div>
+
+    <div class="affiliations">
+      <span><sup>1</sup>CIPLAB, Yonsei University</span>
+      <span><sup>2</sup>Ewha Womans University</span>
+    </div>
+
+    <div class="note"><sup>*</sup>Work done during an internship at CIPLAB</div>
+
+    <div class="buttons">
+      <a class="btn" href="_CVPR_26__PPS.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Paper
+      </a>
+      <a class="btn primary" href="https://drive.google.com/drive/folders/13o-nUt2QXeQxpcxNrM_w5IsnTWOAR56i?usp=share_link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Dataset
+      </a>
+      <a class="btn" href="https://github.com/hello-jinwoo/pps" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.6.5.5 5.6.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2.1c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.9 7.9-10.9C23.5 5.6 18.4.5 12 .5z"/></svg>
+        Code
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="teaser">
+  <div class="container">
+    <figure>
+      <img src="figures/image_samples-1.png" alt="Sample image pairs from PPSD across five source categories." />
+      <figcaption>
+        <strong>The PPSD dataset.</strong> Pairwise image samples spanning five source categories — professional expert edits, device processing variations, generative model outputs, synthetic adjustments, and content-based variations.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="abstract">
+  <div class="container narrow">
+    <h2>Abstract</h2>
+    <p>
+      Photographic style preferences are deeply personal, varying across individuals in color and tonal aesthetics. We introduce <em>Personalized Photographic Style (PPS) learning</em>, where the goal is to capture a user's implicit preferences from comparative judgments and apply them consistently across diverse images. To establish a foundation for this problem, we present three contributions.
+      First, we introduce <strong>PPSD</strong>, a dataset containing pairwise preference judgments from <strong>767 users</strong>, each providing an average of 70 comparisons. To capture diverse style signals, images are sourced from professional edits, device pipelines, and generative models.
+      Second, we explore several baseline models demonstrating the feasibility of adapting style transfer and enhancement approaches for preference learning.
+      Third, we develop a comparative evaluation framework suited to the implicit nature of personal preferences.
+    </p>
+  </div>
+</section>
+
+<section id="dataset">
+  <div class="container">
+    <h2>PPSD Dataset</h2>
+    <p class="lead">
+      A large-scale collection of pairwise user preferences for photographic style.
+      <strong>767 users</strong>, <strong>~60,000</strong> valid preference judgments, <strong>1,192</strong> unique scenes, and <strong>7,972</strong> unique image style pairs across five source categories.
+    </p>
+
+    <figure>
+      <img src="figures/collection_statistics.png" alt="Dataset statistics: consistency, age, region, device, eyewear distributions." />
+      <figcaption>
+        PPSD participant statistics — consistency scores, age, geographic regions, display devices, and eyewear usage.
+      </figcaption>
+    </figure>
+
+    <div class="download-card">
+      <div>
+        <h3>Download the dataset</h3>
+        <p>PPSD is hosted on Google Drive. Includes image pairs and user preference annotations.</p>
+      </div>
+      <a class="btn primary" href="https://drive.google.com/drive/folders/13o-nUt2QXeQxpcxNrM_w5IsnTWOAR56i?usp=share_link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="container">
+    <h2>Baseline Methods</h2>
+    <p class="lead">
+      We explore three representative approaches for adapting existing models to PPS learning: a <strong>User-specific Decoder</strong>, a <strong>User Preference Embedding</strong>, and an <strong>Exemplar-based Inference</strong> model.
+    </p>
+    <figure>
+      <img src="figures/baseline_models.png" alt="Overview of the inference pipeline and three baseline methods." />
+      <figcaption>
+        Inference pipeline and three baseline methods. <strong>(a)</strong> User-specific Decoder — one decoder per user. <strong>(b)</strong> User Preference Embedding — a global decoder conditioned on per-user embeddings. <strong>(c)</strong> Exemplar-based Inference — a transformer that conditions on preference triplets.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="results">
+  <div class="container">
+    <h2>Qualitative Results</h2>
+    <figure>
+      <img src="figures/qualitative_results.png" alt="Qualitative results of baseline methods on PPSD." />
+      <figcaption>
+        Given either non-preferred or preferred images as input, models adjust toward the user's preferred aesthetic while preserving the preferred ones. The bottom row shows a cross-model comparison on identical scenes.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="bibtex">
+  <div class="container narrow">
+    <h2>BibTeX</h2>
+    <pre><code>@article{kim2026pps,
+  title   = {Learning Personalized Photographic Style from Pairwise User Preferences},
+  author  = {Kim, Jinwoo and Yoo, Jihye and Kim, Seon Joo},
+  year    = {2026},
+}</code></pre>
+  </div>
+</section>
+
+<footer>
+  <div class="container narrow">
+    <p>This work was supported by Samsung Research Funding &amp; Incubation Center of Samsung Electronics under Project Number SRFC-IT2501-02.</p>
+    <p class="muted">Template adapted with a minimal academic design.</p>
+  </div>
+</footer>
+
+</body>
+</html>
