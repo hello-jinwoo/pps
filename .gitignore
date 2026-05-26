@@ -1,9 +1,13 @@
 # OS
 .DS_Store
 
-# Paper PDF (hosted externally)
-_CVPR_26__PPS.pdf
+# PDFs — keep only the paper used on the project page
 *.pdf
+!_CVPR_26__PPS.pdf
 
-# Figure source assets (large; hosted externally)
-figures/
+# Figure assets — keep only the PNGs referenced by index.html
+figures/*
+!figures/image_samples-1.png
+!figures/baseline_models.png
+!figures/collection_statistics.png
+!figures/qualitative_results.png
